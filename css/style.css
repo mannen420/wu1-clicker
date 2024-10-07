@@ -2,8 +2,8 @@
 /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
-    --color-lighter: hsl(80, 10%, 90%);
-    --color-light: hsl(80, 10%, 80%);
+    --color-lighter: hsl(0, 0%, 0%);
+    --color-light: hsl(0, 0%, 0%);
     --color-dark: hsl(360, 10%, 10%);
     --color-dark-transparent: hsla(360, 10%, 10%, 0.2);
 
@@ -34,6 +34,10 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     max-width: 20ch;
+}
+
+h1,h2,h3,p{
+    color: white;
 }
 
 /* göm audio, används för att preloada ljudet */
@@ -82,17 +86,27 @@ audio {
     height: 100%;
 }
 
-.hero img {
-    width: 100%;
-    height: 40vh;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+.hero {
+    .back{
+        width: 100%;
+        height: 40vh;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .star{
+    size: 20%;
+    }
+    
+    
 }
 
 .hero-content {
     grid-area: stack;
     place-self: end;
-    padding: var(--space-m-l) 0;
+    padding: 15%;
+  
+    
     color: var(--color-light);
 }
 
@@ -138,17 +152,19 @@ audio {
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #game-button {
-    width: var(--space-4xl-5xl);
-    height: var(--space-4xl-5xl);
+    width: var(1rem);
+    height: var(1rem);
     font-size: var(--step-2);
-    background: url('../img/brett-meliti-RgkYMfFopIA-unsplash-removebg-preview.png');
-    background-size: cover;
-    background-position: center;
+   background-color: transparent;
     border: 2px solid transparent;
-    color: var(--color-light);
+   
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+    
+
+    
+    
 }
 
 #game-button:hover {
@@ -236,3 +252,24 @@ audio {
 .active {
     animation: flash 1s infinite;
 }
+img.star{
+   
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(360deg);
+    }
+    to { 
+      
+      -webkit-transform: rotate(0deg);
+    }
+  }
+  
+  img.star {
+      -webkit-animation-name:            rotate; 
+      -webkit-animation-duration:        60s; 
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+  }
+ 

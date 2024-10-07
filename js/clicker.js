@@ -37,25 +37,26 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
-        description: 'Museet är redo att öppna, grattis! ',
+        description: 'Acquire eyes ',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Nu börjar det likna något, fortsätt gräva!',
+        description: 'Seen alot',
         requiredUpgrades: 10,
         acquired: false,
     },
     {
-        description: 'Klickare, med licens att klicka!',
+        description: 'Insight gained',
         requiredClicks: 10,
         acquired: false,
     },
     {
-        description: 'Tac-2 god!',
+        description: 'Insight earned',
         requiredClicks: 10000,
         acquired: false,
     },
+   
 ];
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
@@ -163,24 +164,29 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Sop',
+        name: 'eyes',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kvalitetsspade',
+        name: 'sight strenght',
         cost: 50,
         clicks: 2,
     },
     {
-        name: 'Skottkärra',
+        name: 'third eye',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Grävmaskin',
+        name: 'fourth eye',
         cost: 1000,
         amount: 100,
+    },
+    {
+        name: 'true sight',
+        cost: 100000,
+        amount: "10000",
     },
 ];
 
@@ -213,14 +219,14 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `buy for ${upgrade.cost} insight.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'buy for ' + upgrade.cost + ' insight';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
