@@ -33,12 +33,20 @@ h1 {
     font-size: var(--step-2);
     text-transform: uppercase;
     font-weight: 700;
-    max-width: 20ch;
+    
 }
 
 h1,h2,h3,p{
     color: white;
 }
+
+.bignumber{
+    text-align: center;
+    width: 100%;
+  
+}
+
+
 
 /* göm audio, används för att preloada ljudet */
 audio {
@@ -89,7 +97,7 @@ audio {
 .hero {
     .back{
         width: 100%;
-        height: 40vh;
+        height: 30vh;
         aspect-ratio: 16/9;
         object-fit: cover;
     }
@@ -104,10 +112,12 @@ audio {
 .hero-content {
     grid-area: stack;
     place-self: end;
-    padding: 15%;
+   
   
     
     color: var(--color-light);
+
+  
 }
 
 @media (max-width: 30rem) {
@@ -139,6 +149,7 @@ audio {
     display: flex;
     justify-content: space-between;
     gap: var(--space-xs-s);
+    color: white;
 }
 
 @media (max-width: 30rem) {
@@ -152,8 +163,7 @@ audio {
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #game-button {
-    width: var(1rem);
-    height: var(1rem);
+
     font-size: var(--step-2);
    background-color: transparent;
     border: 2px solid transparent;

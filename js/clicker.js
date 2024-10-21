@@ -101,10 +101,6 @@ function step(timestamp) {
         last = timestamp;
     }
 
-    if (moneyPerSecond > 0 && !active) {
-        mpsTracker.classList.add('active');
-        active = true;
-    }
 
     // achievements, utgår från arrayen achievements med objekt
     // koden nedan muterar (ändrar) arrayen och tar bort achievements
